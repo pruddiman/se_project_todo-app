@@ -1,7 +1,5 @@
 class FormValidator {
   constructor(settings, formEl) {
-    console.log(settings);
-    console.log(formEl);
     this._formSelector = settings.formSelector;
     this._inputSelector = settings.inputSelector;
     this._submitButtonSelector = settings.submitButtonSelector;
@@ -61,9 +59,6 @@ class FormValidator {
     this._buttonElement = this._formEl.querySelector(
       this._submitButtonSelector
     );
-
-    console.log(this._inputList);
-    console.log(this._buttonElement);
 
     this._toggleButtonState();
 

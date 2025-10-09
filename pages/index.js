@@ -1,9 +1,8 @@
 import { v4 as uuidv4 } from "https://jspm.dev/uuid";
-console.log(uuidv4);
 
 import { initialTodos, validationConfig } from "../utils/constants.js";
-import Todo from "../Components/Todo.js";
-import FormValidator from "../Components/FormValidator.js";
+import Todo from "./components/Todo.js";
+import FormValidator from "./components/FormValidator.js";
 
 export { validationConfig, initialTodos };
 
@@ -36,6 +35,11 @@ addTodoCloseBtn.addEventListener("click", () => {
   closeModal(addTodoPopup);
 });
 
+function renderTodo(todoData) {
+  const todo = generateTodo(todoData);
+  todosList.append(todo);
+}
+
 addTodoForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
   const name = evt.target.name.value;
@@ -47,14 +51,13 @@ addTodoForm.addEventListener("submit", (evt) => {
   const id = uuidv4();
 
   const values = { name, date, id };
-  const todo = generateTodo(values);
-  todosList.append(todo);
+  renderTodo(values);
+  newTodoValidator.resetValidation();
   closeModal(addTodoPopup);
 });
 
 initialTodos.forEach((item) => {
-  const todo = generateTodo(item);
-  todosList.append(todo);
+  renderTodo(item);
 });
 
 const newTodoValidator = new FormValidator(validationConfig, addTodoForm);

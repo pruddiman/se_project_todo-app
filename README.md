@@ -14,4 +14,4 @@ HTML, CSS, Git Bash, and Javascript were used to create this app. Javascript cla
 
 This project is deployed on GitHub Pages:
 
-(https://github.com/pruddiman/se_project_todo-app)
+(https://pruddiman.github.io/se_project_todo-app)
