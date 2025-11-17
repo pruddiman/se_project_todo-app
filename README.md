@@ -4,7 +4,7 @@ My project is a simple Todo app. It features a few things: The task, due date, a
 
 ## Functionality
 
-Create a ToDo task, give it an optional due date, and a description to indicate what task needs to be completed. It features a due date in month (short text abbreviation), day (numeric), and year (numeric). It offers a way to check it off, uncheck it, and delete it if necessary.
+Create a ToDo task, give it an optional due date, and a description to indicate what task needs to be completed. It features a due date in month (short text abbreviation), day (numeric), and year (numeric). It offers a way to check it off, uncheck it, and delete it if necessary. It will update the total count of total tasks vs. completed tasks as you check off the boxes. In addition, it will also update when tasks are deleted.
 
 ## Technology
 
