@@ -10,6 +10,14 @@ class Todo {
     this._templateElement = document.querySelector(selector);
   }
 
+  _toggleCompletion = () => {
+    this._completed = !this._completed;
+  };
+
+  _remove = () => {
+    this._todoElement.remove();
+  };
+
   _setEventListeners() {
     this._todoDeleteBtn = this._todoElement.querySelector(".todo__delete-btn");
     this._todoDeleteBtn.addEventListener("click", () => {
@@ -18,7 +26,7 @@ class Todo {
     });
     this._todoCheckboxEl.addEventListener("change", () => {
       this._toggleCompletion();
-      this._handleCheck(!this._completed);
+      this._handleCheck(this._completed);
     });
   }
 
@@ -47,14 +55,6 @@ class Todo {
         day: "numeric",
       })}`;
     }
-
-    _toggleCompletion = () => {
-      this._completed = !this._completed;
-    };
-
-    _remove = () => {
-      this._todoElement.remove();
-    };
 
     this._generateCheckboxEl();
     this._setEventListeners();
