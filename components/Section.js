@@ -12,7 +12,7 @@ class Section {
     });
   }
 
-  addItem(item) {
+  addItem(element) {
     const element = this._renderer(item);
     this._container.append(element);
   }
