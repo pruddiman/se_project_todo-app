@@ -52,7 +52,7 @@ const addTodoPopup = new PopupWithForm({
     const id = uuidv4();
 
     const values = { name, date, id };
-    newSection.addItem(values);
+    newSection.addItem(generateTodo(values));
     todoCounter.updateTotal(true);
     newTodoValidator.resetValidation();
     addTodoPopup.close();
